@@ -1,0 +1,138 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @TaNhatTan Sign out
+0
+0 1 tanhattan0051/Note
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+You’re editing a file in a project you don’t have write access to. Submitting a change to this file will write it to a new branch in your fork TaNhatTan/Note-1, so you can send a pull request.
+Note/ 
+MYSQL stop trên web
+  or cancel
+    
+ 
+1
+    MYSQL stop trên web
+2
+    
+3
+    
+4
+ tail /var/log/messages
+5
+​
+6
+ tail /var/log/mysqld.log 
+7
+​
+8
+​
+9
+thMay  7 07:00:33 web2 kernel: [<ffffffff81127dc0>] ? out_of_memory+0x220/0x3c0
+10
+​
+11
+May  7 07:00:33 web2 kernel: [15727]    48 15727   140848      369   0       0             0 httpd
+12
+May  7 07:00:33 web2 kernel: Out of memory: Kill process 1022 (mysqld) score 72 or sacrifice child
+13
+​
+14
+​
+15
+180507  7:00:34 InnoDB: Initializing buffer pool, size = 128.0M
+16
+InnoDB: mmap(137363456 bytes) failed; errno 12
+17
+ 
+18
+    cách khắc phục 
+19
+    
+20
+1/ tăng swap lên 4G
+21
+​
+22
+2/ vim /etc/mysql.cnf
+23
+[mysqld]
+24
+innodb_buffer_pool_size=2M
+25
+​
+26
+1/ tăng swap lên 4GB 
+27
+dd if=/dev/zero of=/swapfile bs=1024 count=4194304
+28
+mkswap /swapfile
+29
+swapon /swapfile
+30
+vim /etc/fstab
+31
+​
+32
+/swapfile swap swap defaults 0 0
+33
+​
+34
+​
+35
+thành 
+36
+​
+37
+dev/mapper/vg_cent6min-lv_root /                       ext4    defaults        1 1
+38
+UUID=b0f21d58-78a7-409d-965e-199554a316d9 /boot                   ext4    defaults        1 2
+39
+#/dev/mapper/vg_cent6min-lv_swap swap                    swap    defaults        0 0
+40
+/swapfile swap swap defaults 0 0
+41
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+42
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+43
+sysfs                   /sys                    sysfs   defaults        0 0
+44
+proc                    /proc                   proc    defaults        0 0
+45
+​
+46
+​
+47
+​
+48
+check lại
+49
+mount -a 
+50
+free -m 
+@TaNhatTan
+Propose file change
+
+Update MYSQL stop trên web
+
+Add an optional extended description…
+ 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
