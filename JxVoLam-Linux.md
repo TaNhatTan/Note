@@ -66,4 +66,19 @@ iptables -t nat -I PREROUTING -d <ip-backend>/32 -p tcp -m tcp --dport 6666 -j D
 ***Note: Port login: 5622 + Port game: 6666, nếu có sự thay đổi port phải báo kỹ thuật để đổi port.***
 
 
+
+#### start game jx loi
+
+[root@vps gs1]# pwd
+/home/jxser/gs1
+[root@vps gs1]# ./jx_linux_y 
+./jx_linux_y: /usr/lib/libcurl.so.4: no version information available (required by /usr/lib/vietguards.kernel)
+
+### fix 
+ root@vps ~]# cd /home/
+[root@vps home]# ls
+backup  jxser  VietGuardJX
+[root@vps home]# ./VietGuardJX 5622
+
+
 Nguồn: https://github.com/TraiOi/d7b3560525906f386528ca7d588ee5e9/blob/master/MyNote/JxVoLam-Linux.md
