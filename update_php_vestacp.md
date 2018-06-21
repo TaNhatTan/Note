@@ -16,3 +16,8 @@ tương ứng là 5.6, 7.0, 7.1,...
 
 
 muốn up lên bản nào thì enable repo đó lên
+
+
+### lỗi Failed loading /usr/lib64/php/modules/ioncube_loader_lin_5.6.so:
+cp thay thế đường dẫn
+https://www.howtoforge.com/tutorial/how-to-install-ioncube-loader/
