@@ -36,6 +36,8 @@ Check DDos
                 watch -n1 "ipset list | grep timeout"
                 
                 watch -n1 "ipset list | grep timeout | sed 's/timeout/\|/' | sed 's/ts/ts \|/' | sed 's/tes/tes \|/'"
+                
+                ipset list BLACKLIST
 
 
   III. BLOCK IPS
