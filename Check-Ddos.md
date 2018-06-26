@@ -68,6 +68,13 @@ bo allow
 
         csf -ar <IP>
 
+check ip bi block 
+
+         csf -g <IP>
+         
+ # mở một IP tạm bị block (Temporary Blocks)
+ 
+         csf -tr <IP>
 
 3.IP set gen4
 
